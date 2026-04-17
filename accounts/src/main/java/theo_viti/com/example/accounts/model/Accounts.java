@@ -1,4 +1,4 @@
-package com.example.accounts.model;
+package theo_viti.com.example.accounts.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

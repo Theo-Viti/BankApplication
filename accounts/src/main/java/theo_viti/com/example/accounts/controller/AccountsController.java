@@ -1,10 +1,9 @@
-package com.example.accounts.controller;
-
-import com.example.accounts.model.Accounts;
-import com.example.accounts.model.Customer;
-import com.example.accounts.repository.AccountsRepository;
+package theo_viti.com.example.accounts.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import theo_viti.com.example.accounts.model.Accounts;
+import theo_viti.com.example.accounts.model.Customer;
+import theo_viti.com.example.accounts.repository.AccountsRepository;
 
 @RestController
 public class AccountsController {

@@ -1,9 +1,9 @@
-package com.example.accounts.repository;
+package theo_viti.com.example.accounts.repository;
 
 
-import com.example.accounts.model.Accounts;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+import theo_viti.com.example.accounts.model.Accounts;
 
 @Repository
 public interface AccountsRepository extends CrudRepository<Accounts, Long> {

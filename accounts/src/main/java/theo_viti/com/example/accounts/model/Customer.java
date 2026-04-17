@@ -1,4 +1,4 @@
-package com.example.accounts.model;
+package theo_viti.com.example.accounts.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -7,8 +7,8 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 
-@Data
 @Entity
+@Data
 public class Customer {
 
       @Id
@@ -17,8 +17,10 @@ public class Customer {
       private int customerId;
       private String name;
       private String email;
+
       @Column(name = "mobile_number")
       private String mobileNumber;
+
       @Column(name = "create_dt")
       private LocalDate createDt;
 
