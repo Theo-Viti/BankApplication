@@ -1,6 +1,0 @@
-services:
-  cards:
-    image: kaeldev/cards:1.0.1
-    mem_limit: 700m
-    ports:
-      - "8082:8080"
