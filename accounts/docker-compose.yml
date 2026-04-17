@@ -1,0 +1,6 @@
+services:
+  accounts:
+    image: kaeldev/accounts:1.0.1
+    mem_limit: 700m
+    ports:
+      - "8081:8080"
