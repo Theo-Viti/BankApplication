@@ -1,6 +1,0 @@
-services:
-  loans:
-    image: kaeldev/loans:1.0.1
-    mem_limit: 700m
-    ports:
-      - "8083:8080"
