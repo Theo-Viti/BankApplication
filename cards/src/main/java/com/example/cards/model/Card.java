@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @ToString
-public class Cards {
+public class Card {
 
       @Id
       @GeneratedValue(strategy = GenerationType.AUTO)

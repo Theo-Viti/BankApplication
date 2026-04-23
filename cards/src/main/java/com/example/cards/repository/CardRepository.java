@@ -1,7 +1,7 @@
 package com.example.cards.repository;
 
 
-import com.example.cards.model.Cards;
+import com.example.cards.model.Card;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -9,8 +9,8 @@ import java.util.List;
 
 
 @Repository
-public interface CardsRepository extends CrudRepository<Cards, Long> {
+public interface CardRepository extends CrudRepository<Card, Long> {
 
-      List<Cards> findByCustomerId(int customerId);
+      List<Card> findByCustomerId(int customerId);
 
 }

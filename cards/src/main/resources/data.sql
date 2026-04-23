@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS cards;
+    DROP TABLE IF EXISTS cards;
 
 CREATE TABLE `cards` (
   `card_id` int NOT NULL AUTO_INCREMENT,

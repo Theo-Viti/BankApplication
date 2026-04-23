@@ -8,6 +8,6 @@ import theo_viti.com.example.accounts.model.Accounts;
 @Repository
 public interface AccountsRepository extends CrudRepository<Accounts, Long> {
 
-      Accounts findByCustomerId(int customerId);
+      Accounts findByCustomerId(Long customerId);
 
 }
