@@ -1,18 +1,57 @@
 services:
+  consul:
+    image: hashicorp/consul:1.21.3
+    mem_limit: 700m
+    ports:
+      - "8500:8500"
+    command: consul agent -server -ui -node=server-1 -bootstrap-expect=1 -client=0.0.0.0 -data-dir=/consul/data
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8500/v1/status/leader" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+    - bankApp-network
+
+  config-server:
+    image: kaeldev/configserver
+    mem_limit: 700m
+    ports:
+      - "8071:8071"
+    depends_on:
+      consul:
+        condition: service_healthy
+    networks:
+      - bankApp-network
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+      - SPRING_CONFIG_IMPORT=optional:configserver:http://config-server:8071
+
   accounts:
     image: kaeldev/accounts:1.0.1
     mem_limit: 700m
     ports:
       - "8081:8080"
+    networks:
+      - bankApp-network
 
   cards:
     image: kaeldev/cards:1.0.1
     mem_limit: 700m
     ports:
       - "8082:8080"
+    networks:
+    - bankApp-network
 
   loans:
     image: kaeldev/loans:1.0.1
     mem_limit: 700m
     ports:
       - "8083:8080"
+    networks:
+    - bankApp-network
+
+networks:
+  bankApp-network:
+    driver: bridge
